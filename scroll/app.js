@@ -51,3 +51,35 @@ window.addEventListener('scroll', function(){
 
 // ********** smooth scroll ************
 // select links
+const scrollLinks = document.querySelectorAll(".scroll-link");
+scrollLinks.forEach(function (link){
+
+    link.addEventListener('click', function(event){
+        // prevent default
+        event.preventDefault();
+        //navigate to specific spot
+        const id = event.currentTarget.getAttribute('href').slice(1);
+        const element = document.getElementById(id);
+
+        //calculating height
+        const navHeight = navbar.getBoundingClientRect().height;
+        const containerHeight = linksHolder.getBoundingClientRect().height
+        const fixedNav = navbar.classList.contains('fixed-nav');
+        
+        let position = element.offsetTop-navHeight;
+
+        if(!fixedNav){
+            position = position-navHeight;
+        }
+        if(navHeight > 82){
+            position = position + containerHeight;
+        }
+        console.log(position);
+        window.scrollTo({
+            left:0,
+            top:position,
+        });
+        linksHolder.style.height = 0;
+
+    });
+});
