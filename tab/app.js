@@ -1,8 +1,22 @@
 const btns = document.querySelectorAll(".tab-btn");
 const about = document.querySelector(".about");
-const articles = document.querySelector(".content");
+const articles = document.querySelectorAll(".content");
 
-about.addEventListener('click', function(e){
+about.addEventListener('click', function (e) {
     const id = e.target.dataset.id;
-    
-})
+
+    if (id) {
+        btns.forEach(function (btn) {
+            // remove button from default active
+            btn.classList.remove("active");
+            e.target.classList.add("active");
+        });
+        // hide default active articles
+        articles.forEach( function (article) {
+            article.classList.remove("active");
+        });
+        const element = document.getElementById(id);
+        element.classList.add("active");
+    }
+
+});
