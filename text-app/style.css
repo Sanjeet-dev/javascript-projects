@@ -26,6 +26,12 @@ body {
     line-height:4px;
     
   }
+  .underline{
+    margin-top:1.5rem;
+    width:7rem;
+    border-bottom:4px solid rgb(13, 13, 243);
+
+  }
    #inputForm{
     margin-top: 8rem;
     display: flex;
