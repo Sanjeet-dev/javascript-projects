@@ -16,7 +16,11 @@ let editID = "";
 
 // ****** EVENT LISTENERS **********
 // submit-form
-form.addEventListener('submit', addItem)
+form.addEventListener('submit', addItem);
+
+// clear items
+clearBtn.addEventListener('click', clearItems);
+
 
 // ****** FUNCTIONS **********
 function addItem(e) {
@@ -49,6 +53,8 @@ function addItem(e) {
         container.classList.add("show-container");
         // add to local storage
         addToLocalStorage(id,value);
+        // set back to default
+        setBackToDefault();
     }
     else if (value && editFlag) {
         console.log('editing');
@@ -71,7 +77,31 @@ function displayAlert(text, action) {
 
     }, 1000);
 }
+// clear items
+
+function clearItems(){
+    const items = document.querySelectorAll(".grocery-item");
+
+    if(items.length > 0){
+        items.forEach(function(item){
+            list.removeChild(item);
+        })
+    }
+    container.classList.remove("show-container");
+    displayAlert('empty list', "danger");
+    setBackToDefault();
+    // localStorage.removeItem('list');
+
+}
+
 // set back to default
+function setBackToDefault(){
+    console.log('set back to default');
+    grocery.value = "";
+    editFlag=false;
+    editID = "";
+    submitBtn.textContent="submit";
+}
 
 // ****** LOCAL STORAGE **********
 function addToLocalStorage(id,value){
