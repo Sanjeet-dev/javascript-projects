@@ -1,0 +1,84 @@
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+}
+body {
+    font-family: Arial, sans-serif;
+  }
+  main{
+    width:100vw;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+    padding-top:8rem;
+
+  }
+  header{
+    margin-top:-5rem;
+    font-size:2rem;
+    color:black;
+    font-weight:700;
+    letter-spacing: 0.25rem;
+    line-height:4px;
+    
+  }
+   #inputForm{
+    margin-top: 8rem;
+    display: flex;
+    flex-direction: row;
+  }
+
+  label {
+    font-size: 1.2rem;
+    color:rgb(231, 206, 141);
+    letter-spacing:0.2rem;
+  }
+  
+  input[type="text"] {
+    width: 65%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    color:gray;
+    font-size:15px;
+  }
+  .display{
+    position:relative;
+    width:70%;
+    height:15rem;
+    margin-top:5rem;
+    padding: 20px;
+    box-shadow: inset 0 -3em 3em rgba(0, 0, 0, 0.1), 0 0 0 2px rgb(255, 255, 255),
+    0.3em 0.3em 1em rgba(0, 0, 0, 0.3);
+    
+  }
+
+   #output{
+    line-height:4px;
+    font-size: 16px;
+    letter-spacing:2.5px;
+    color:blueviolet;
+  }
+  button{
+    width:7rem;
+    background-color:white;
+    color:black;
+    font-size:15px;
+    letter-spacing:0.1rem;
+    border-radius:10px;
+    margin-left:2.5rem;
+  }
+  button:hover{
+    background-color:black;
+    color:white;
+    border-radius:3px;
+  }
+  #ansBtn{
+    position:absolute;
+    bottom:0;
+    right:0;
+  }
+  
+  
