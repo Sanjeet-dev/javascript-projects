@@ -1,10 +1,12 @@
+@import url("https://fonts.googleapis.com/css?family=Open+Sans|Roboto:400,700&display=swap");
+
 *{
   margin:0;
   padding:0;
   box-sizing:border-box;
 }
 body {
-    font-family: Arial, sans-serif;
+    font-family: "Open-Sans", sans-serif;
   }
   main{
     width:100vw;
@@ -43,6 +45,12 @@ body {
     border-radius: 5px;
     color:gray;
     font-size:15px;
+  }
+  input::placeholder{
+    font-family: "Open-Sans", sans-serif;
+    color:rgb(107, 81, 81);
+    letter-spacing:2px;
+
   }
   .display{
     position:relative;
