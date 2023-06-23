@@ -17,7 +17,6 @@ let editID = "";
 // ****** EVENT LISTENERS **********
 // submit-form
 form.addEventListener('submit', addItem);
-
 // clear items
 clearBtn.addEventListener('click', clearItems);
 
@@ -36,15 +35,24 @@ function addItem(e) {
         const attr = document.createAttribute('data-id');
         attr.value = id;
         element.setAttributeNode(attr);
-        element.innerHTML = ` <p class="title">${value}</p>
+        element.innerHTML = `<p class="title">${value}</p>
         <div class="btn-container">
           <button type="button" class="edit-btn">
             <i class="fas fa-edit"></i>
           </button>
-          <button type="button"  class="delete-btn">
+          <button type="button" class="delete-btn">
             <i class="fas fa-trash"></i>
           </button>
-        </div>`;
+        </div> `;
+
+    const deleteBtn = document.querySelector('.delete-btn');
+    const editBtn = document.querySelector('.edit-btn');
+    // editBtn.addEventListener('click', editItem);
+    // deleteBtn.addEventListener("click", deleteItem);
+
+
+        
+        
         // append child
         list.appendChild(element);
         //display alert
@@ -92,6 +100,16 @@ function clearItems(){
     setBackToDefault();
     // localStorage.removeItem('list');
 
+}
+//delete function
+// function deleteItem(e) {
+//     console.log('deleting item from grocery list');
+//     // const element = e.currentTarget.parentElement.parentElement;
+//     // list.removeChild(element);
+//     }
+// edit function
+function editItem(){
+    console.log('edit item');
 }
 
 // set back to default
