@@ -28,7 +28,20 @@ btn.addEventListener('click', function(){
 
     color.textContent = hexColor;
     document.body.style.backgroundColor = hexColor;
+    copyToClipboard(color.textContent)
 });
+
+// function for coping hexcode text
+function copyToClipboard(text){
+    navigator.clipboard.writeText(text)
+    .then(()=>{
+        console.log("Text copied from clipboard");
+    })
+    .catch(err => {
+        console.log(err);
+    });
+    
+}
 
 function getRandomNumber(){
     return Math.floor(Math.random()*hex.length);
